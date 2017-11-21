@@ -27,7 +27,7 @@
 
 - (void)changeURL:(NSNotification*)notification
 {
-   [self.webview loadRequest:[NSURLRequest requestWithURL:notification.object]];
+   [self.webview loadRequest:[NSURLRequest requestWithURL:[UIApplication sharedApplication].appDelegate.defaultURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30]];
 }
 
 
@@ -38,7 +38,8 @@
 
 - (IBAction)reloadAction:(id)sender
 {
-  [self.webview loadRequest:[NSURLRequest requestWithURL:[UIApplication sharedApplication].appDelegate.defaultURL]];
+  
+  [self.webview loadRequest:[NSURLRequest requestWithURL:[UIApplication sharedApplication].appDelegate.defaultURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30]];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
