@@ -55,7 +55,7 @@ NSNotificationName const kChangeDefaultURLNotification = @"kChangeDefaultURLNoti
   NSString* str = [defaults valueForKey:@"defaultURL"];
   if (str == nil)
   {
-    str = @"http://192.168.0.94/testios/homepage.html";
+    str = @"http://download.moblonline.com/test-wdevs/test2.html";
     
     [defaults setValue:str forKey:@"defaultURL"];
     [defaults synchronize];
